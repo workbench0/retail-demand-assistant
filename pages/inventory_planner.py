@@ -1,9 +1,9 @@
 import plotly.graph_objects as go
 import streamlit as st
 from src import service as sv
-from src.ui import product_picker
+from src.ui import product_picker, page_header
 
-st.title("Inventory Planner")
+page_header("Inventory Planner", "Turn the forecast into a suggested order, with every assumption visible")
 st.warning("Stock inputs are user-entered or demo values. The historical sales data contains no real stock levels.")
 pid = product_picker()
 d = sv.default_inputs(pid)

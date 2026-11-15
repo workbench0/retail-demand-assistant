@@ -2,10 +2,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 from src import service as sv
-from src.ui import product_picker
+from src.ui import product_picker, page_header
 
 art, R = sv.artifacts(), sv.reports()
-st.title("Model Evaluation")
+page_header("Model Evaluation", "Measured metrics, baseline comparison and known limitations")
 st.markdown(f"""
 **Method.** One global LightGBM model across 20 products, forecasting 28 days recursively (each prediction is fed back as
 history; actuals are never used inside the forecast window). Compared with a seasonal naive baseline (repeat the last 7 days) on
