@@ -6,7 +6,7 @@ that explains results by calling structured tools.
 
 **Live app:** https://retail-demand-assistant.streamlit.app
 (Free hosting: after inactivity the app may show a "wake up" button. Click it and wait a few seconds.)
-**Demo recording:** (add link)
+**Demo:** use the live app above; a screen recording is available on request.
 
 > The dataset is historical (sales end 2016-05-22). Forecasts cover 2016-05-23 to 2016-06-19 and are a demonstration
 > on old data, not current market predictions. Stock levels are user-entered or labeled demo values.
