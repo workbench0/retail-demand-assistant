@@ -109,7 +109,23 @@ def _register_plotly_template():
     pio.templates.default = "retail"
 
 
+def _route_html():
+    """Send st.markdown(..., unsafe_allow_html=True) through st.html, which renders HTML/CSS consistently."""
+    if getattr(st.markdown, "_html_wrapped", False):
+        return
+    original = st.markdown
+
+    def md(body, *args, **kwargs):
+        if kwargs.pop("unsafe_allow_html", False):
+            return st.html(body)
+        return original(body, *args, **kwargs)
+
+    md._html_wrapped = True
+    st.markdown = md
+
+
 def apply_style():
+    _route_html()
     st.markdown(CSS, unsafe_allow_html=True)
     _register_plotly_template()
     if not getattr(st.plotly_chart, "_retail_wrapped", False):

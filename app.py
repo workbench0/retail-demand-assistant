@@ -178,4 +178,5 @@ pg = st.navigation([
     st.Page("pages/model_evaluation.py", title="Model Evaluation"),
 ])
 st.sidebar.caption("Historical M5 demo data (to May 2016). Forecasts are demonstrations, not current predictions.")
+st.sidebar.caption(f"Streamlit {st.__version__}")
 pg.run()
